@@ -1,0 +1,113 @@
+<html>
+<head>
+<title> Lab 10 </title>
+<script src="../processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+int redx;
+int blueSizeX;
+int blueSizeY;
+int greenx;
+int pinkx;
+int pinkLeft;
+int blueBig;
+
+void setup()
+
+{
+
+   size( 500, 500 );
+   redx = 50;
+   blueSizeX = 50;
+   blueSizeY = 50;
+   greenx = 450;
+   pinkx = 50;
+   pinkLeft = 0;
+   blueBig = 0;
+
+
+
+}
+
+
+void draw()
+{
+
+	background(0,0,0);
+
+	fill(255,0,0);
+	ellipse(redx,50,50,50);
+	redx = redx + 3;
+	if (redx > 450)
+	{
+			redx = 450;
+	}
+
+
+	fill(0,0,255);
+	ellipse(250,250,blueSizeX,blueSizeY);
+	if (blueBig == 0)
+	{
+			 blueSizeX = blueSizeX + 1;
+			 blueSizeY = blueSizeY + 1;
+	}
+
+	if (blueBig == 1)
+	{
+			 blueSizeX = blueSizeX - 1;
+			 blueSizeY = blueSizeY - 1;
+	}
+
+	if (blueSizeX > 70 && blueSizeY > 70)
+	{
+			blueBig = 1;
+	}
+
+	if (blueSizeX == 50 && blueSizeY == 50)
+	{
+
+			 blueBig = 0;
+	}
+
+	fill(0,255,0);
+	ellipse(greenx,150,50,50);
+	greenx = greenx - 3;
+	if (greenx < 50)
+	{
+			greenx = 450;
+	}
+
+
+
+	fill(255,200,225);
+	ellipse(pinkx,350,50,50);
+	if (pinkLeft == 0)
+	{
+			 pinkx = pinkx + 3;
+	}
+
+	if (pinkLeft == 1)
+	{
+			 pinkx = pinkx - 3;
+	}
+
+	if (pinkx > 450)
+	{
+			pinkLeft = 1;
+	}
+
+	if (pinkx == 50)
+	{
+
+			 pinkLeft = 0;
+	}
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
